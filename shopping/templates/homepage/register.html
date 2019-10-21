@@ -1,0 +1,51 @@
+{% extends 'homepage/base.html' %}
+{% load static  %}
+{% block cssblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/styles/bootstrap4/bootstrap.min.css' %}">
+<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/plugins/slick-1.8.0/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/styles/responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class='container'>
+     <div class='content-section'>
+        <form method='POST' >
+            {% csrf_token %}
+            <fieldset class='form-group'>
+                <legend class='border-bottom mb-4'>Black Metal</legend>
+                {{form.as_p}}
+            </fieldset>
+            <div class='form-group'>
+              <button class='btn btn-outline-info' type='submit'>Sign Up</button>
+            </div>
+        </form>
+        <div class='border-top pt-3'>
+            <small class='text-muted'>
+                Already Have An Accout? <a href='#' class='ml-2'>Sign In</a>
+            </small>
+        </div>
+     </div>
+     </div>
+  
+
+{% endblock %}
+
+{% block jsblock %}
+<script src="{% static 'homepage/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'homepage/styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'homepage/styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'homepage/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'homepage/plugins/slick-1.8.0/slick.js' %}"></script>
+<script src="{% static 'homepage/plugins/easing/easing.js' %}"></script>
+<script src="{% static 'homepage/js/custom.js' %}"></script>
+{% endblock %}
